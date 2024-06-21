@@ -20,7 +20,7 @@ router.get(
   (req: Request, res: Response) => {
     // If middleware passed, user is authenticated
     res.json({ authenticated: true, user: req.user }); // Respond with authenticated status and user info
-  }
+  },
 );
 
 // Crud Operation

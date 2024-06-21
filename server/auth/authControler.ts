@@ -83,8 +83,6 @@ export class authController extends BaseController {
       res.cookie("Token", token, {
         maxAge: 86_400_000, // Cookie expires after 24 hours
         httpOnly: true,
-        sameSite: "none",
-        secure: true,
       });
 
       // Send successful login response

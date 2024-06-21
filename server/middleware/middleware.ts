@@ -53,7 +53,7 @@ export function authenticateToken(
           maxAge: 1,
           httpOnly: true,
         });
-        res.send({ message: "token expired" });
+        return res.status(401).send({ message: "Token expired" });
       } else {
         req.body.token = decodedData;
 
