@@ -12,14 +12,12 @@ export class AuthService {
     this.URL = environment.getUrl();
     console.log(this.URL);
   }
+
   isAuthenticated() {
     return this.profile.loggedIn().pipe(
       map((authenticated) => {
-        if (!authenticated) {
-          return authenticated;
-        }
         return authenticated;
-      })
+      }),
     );
   }
 }

@@ -14,16 +14,14 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient,
-    private router: Router,
-    private endpoint: EndpointService
+    private endpoint: EndpointService,
   ) {}
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
-      name: ["", Validators.required], // Name field added
+      name: ["", Validators.required],
       email: ["", [Validators.required, Validators.email]],
-      phone: ["", Validators.required], // Phone number field added
+      phone: ["", Validators.required],
       password: ["", Validators.required],
     });
   }

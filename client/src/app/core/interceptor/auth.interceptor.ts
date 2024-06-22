@@ -13,9 +13,9 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(
     req: HttpRequest<any>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<any>> {
     let request = req.clone({ withCredentials: true });
-    return next.handle(request); // Corrected method call
+    return next.handle(request);
   }
 }

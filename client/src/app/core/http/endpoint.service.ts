@@ -21,11 +21,14 @@ export class EndpointService {
 
   user() {
     return {
+      register: (body: any) => {
+        return this._http.post(`${this.URL}api/v1/auth/register`, body);
+      },
       login: (body) => {
         return this._http.post(`${this.URL}api/v1/auth/login`, body);
       },
-      register: (body: any) => {
-        return this._http.post(`${this.URL}api/v1/auth/register`, body);
+      logout: () => {
+        return this._http.post(`${this.URL}api/v1/auth/logout`, {});
       },
       getAll: () => {
         return this._http.get(`${this.URL}api/v1/getAllUsers`);

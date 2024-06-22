@@ -18,7 +18,7 @@ export class ProfileService {
         catchError((error) => {
           console.error("Error checking authentication status:", error);
           return of(false);
-        })
+        }),
       );
   }
 }

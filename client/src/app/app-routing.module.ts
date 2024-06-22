@@ -6,6 +6,7 @@ import { SignupComponent } from "./shared/components/signup/signup.component";
 import { OnboardingGuard } from "./core/guards/onboarding.guard";
 import { MainLayoutComponent } from "./layout/components/main-layout/main-layout.component";
 import { AuthGuard } from "./core/guards/auth.guard";
+import { NotfoundComponent } from "./shared/components/notfound/notfound.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "splash", pathMatch: "full" },
@@ -14,11 +15,33 @@ const routes: Routes = [
   { path: "signup", component: SignupComponent },
   {
     path: "pages",
-    loadChildren: () =>
-      import("./layout/layout.module").then((m) => m.LayoutModule),
-  },
+    component: MainLayoutComponent,
+    children: [
+      {
+        path: "",
+        canActivate: [OnboardingGuard],
+        children: [],
+      },
+      {
+        path: "welcome",
+        pathMatch: "full",
+        redirectTo: "/pages/publish/welcome",
+      },
 
-  { path: "**", redirectTo: "splash" },
+      {
+        path: "publish",
+        canActivate: [AuthGuard],
+        loadChildren: () =>
+          import("./modules/publish/publish.module").then(
+            (m) => m.PublishModule,
+          ),
+      },
+      {
+        path: "**",
+        component: NotfoundComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({

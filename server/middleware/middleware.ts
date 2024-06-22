@@ -10,22 +10,23 @@ export function testCookie(req: Request, res: Response, next: NextFunction) {
       });
       return;
     }
-    jwt.verify(req.cookies.Token, config.Jwt_Secret, function (
-      err,
-      decodedData
-    ) {
-      let nowDate = new Date().getTime() / 1000;
-      if (decodedData.exp < nowDate) {
-        res.cookie("Token", "", {
-          maxAge: 1,
-          httpOnly: true,
-        });
-        res.send({ message: "token expired" });
-      } else {
-        req.body.token = decodedData;
-        next();
-      }
-    });
+    jwt.verify(
+      req.cookies.Token,
+      config.Jwt_Secret,
+      function (err, decodedData) {
+        let nowDate = new Date().getTime() / 1000;
+        if (decodedData.exp < nowDate) {
+          res.cookie("Token", "", {
+            maxAge: 1,
+            httpOnly: true,
+          });
+          res.send({ message: "token expired" });
+        } else {
+          req.body.token = decodedData;
+          next();
+        }
+      },
+    );
   } catch (err) {
     res.status(401).send("invalid token");
   }
@@ -34,7 +35,7 @@ export function testCookie(req: Request, res: Response, next: NextFunction) {
 export function authenticateToken(
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   try {
     if (!req?.cookies?.Token) {
@@ -43,23 +44,26 @@ export function authenticateToken(
       });
       return;
     }
-    jwt.verify(req.cookies.Token, config.Jwt_Secret, function (
-      err,
-      decodedData
-    ) {
-      let nowDate = new Date().getTime() / 1000;
-      if (decodedData.exp < nowDate) {
-        res.cookie("Token", "", {
-          maxAge: 1,
-          httpOnly: true,
-        });
-        return res.status(401).send({ message: "Token expired" });
-      } else {
-        req.body.token = decodedData;
+    jwt.verify(
+      req.cookies.Token,
+      config.Jwt_Secret,
+      function (err, decodedData) {
+        let nowDate = new Date().getTime() / 1000;
+        if (decodedData.exp < nowDate) {
+          res.cookie("Token", "", {
+            maxAge: 1,
+            httpOnly: true,
+            sameSite: "none",
+            secure: true,
+          });
+          return res.status(401).send({ message: "Token expired" });
+        } else {
+          req.body.token = decodedData;
 
-        next();
-      }
-    });
+          next();
+        }
+      },
+    );
   } catch (err) {
     res.status(401).send("invalid token");
   }

@@ -76,18 +76,19 @@ export class authController extends BaseController {
           email: user.email,
           exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24, // Token expires after 24 hours
         },
-        config.Jwt_Secret
+        config.Jwt_Secret,
       );
 
       // Set cookie with the token
       res.cookie("Token", token, {
         maxAge: 86_400_000, // Cookie expires after 24 hours
         httpOnly: true,
+        sameSite: "none",
+        secure: true,
       });
 
       // Send successful login response
       return super.response(res, 200, true, "Login successful", {
-        token: token,
         user: {
           name: user.name,
           phone: user.phone,

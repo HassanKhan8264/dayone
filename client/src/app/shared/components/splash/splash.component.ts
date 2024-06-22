@@ -8,21 +8,50 @@ import { Router } from "@angular/router";
 })
 export class SplashComponent implements OnInit {
   showLogo = false;
-  constructor(private profile: ProfileService, private router: Router) {}
+  constructor(
+    private profile: ProfileService,
+    private router: Router,
+  ) {}
   ngOnInit() {
     this.initialize();
   }
   initialize() {
     setTimeout(() => {
       this.showLogo = true;
-      this.profile.loggedIn().subscribe((response: any) => {
-        console.log(response);
-        debugger;
-        if (response.authenticated) {
-          this.router.navigate(["/pages"]); // Redirect to dashboard if authenticated
-        } else {
-          this.router.navigate(["/login"]); // Redirect to login if not authenticated
-        }
+      this.profile.loggedIn().subscribe({
+        next: (response: any) => {
+          console.log(response);
+          if (response.authenticated) {
+            console.log("Navigating to /pages/publish");
+            this.router.navigate(["/pages"]).then((navigated) => {
+              if (navigated) {
+                console.log("Navigation to /pages/publish successful");
+              } else {
+                console.log("Navigation to /pages/publish failed");
+              }
+            });
+          } else {
+            console.log("Navigating to /login");
+            this.router.navigate(["/login"]).then((navigated) => {
+              if (navigated) {
+                console.log("Navigation to /login successful");
+              } else {
+                console.log("Navigation to /login failed");
+              }
+            });
+          }
+        },
+        error: (error) => {
+          console.error("Error checking authentication status:", error);
+          console.log("Navigating to /login due to error");
+          this.router.navigate(["/login"]).then((navigated) => {
+            if (navigated) {
+              console.log("Navigation to /login successful");
+            } else {
+              console.log("Navigation to /login failed");
+            }
+          });
+        },
       });
     }, 1000);
   }

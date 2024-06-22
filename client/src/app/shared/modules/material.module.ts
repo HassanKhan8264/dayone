@@ -106,16 +106,7 @@ const componentModules = [
 @NgModule({
   imports: [...componentModules],
   exports: [...componentModules],
-  providers: [
-    // {
-    //   provide: MAT_TOOLTIP_DEFAULT_OPTIONS,
-    //   useValue: {
-    //     showDelay: 100,
-    //     hideDelay: 100,
-    //     disableTooltipInteractivity: true,
-    //   },
-    // },
-  ],
+  providers: [],
   declarations: [],
 })
 export class MaterialModule {}

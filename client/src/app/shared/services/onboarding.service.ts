@@ -1,3 +1,4 @@
+import { Observable, of } from "rxjs";
 import { Injectable } from "@angular/core";
 
 @Injectable({
@@ -5,7 +6,7 @@ import { Injectable } from "@angular/core";
 })
 export class OnboardingService {
   constructor() {}
-  checkWelcomePageCondition(): boolean {
+  checkWelcomePageCondition() {
     let account = localStorage.getItem("account");
     return !!account;
   }

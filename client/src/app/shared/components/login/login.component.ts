@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private endpoint: EndpointService
+    private endpoint: EndpointService,
   ) {}
 
   ngOnInit(): void {
@@ -26,11 +26,10 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  userLogin() {
-    let body = this.loginForm.value;
+  onSubmit() {
     this.endpoint
       .user()
-      .login(body)
+      .login(this.loginForm.value)
       .subscribe({
         next: (res: any) => {
           console.log("Login successful", res);

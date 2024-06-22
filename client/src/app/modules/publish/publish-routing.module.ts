@@ -1,8 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { PublishLayoutComponent } from "./publish-layout/publish-layout.component";
-import { WelcomeComponent } from "./welcome/welcome.component";
-import { ContentComponent } from "./content/content.component";
 
 const routes: Routes = [
   {
@@ -16,11 +14,13 @@ const routes: Routes = [
       },
       {
         path: "content",
-        component: ContentComponent,
+        loadChildren: () =>
+          import("./content/content.module").then((m) => m.ContentModule),
       },
       {
         path: "welcome",
-        component: WelcomeComponent,
+        loadChildren: () =>
+          import("./welcome/welcome.module").then((m) => m.WelcomeModule),
       },
     ],
   },
