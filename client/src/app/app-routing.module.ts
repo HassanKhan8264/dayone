@@ -11,8 +11,6 @@ import { NotfoundComponent } from "./shared/components/notfound/notfound.compone
 const routes: Routes = [
   { path: "", redirectTo: "splash", pathMatch: "full" },
   { path: "splash", component: SplashComponent },
-  { path: "login", component: LoginComponent },
-  { path: "signup", component: SignupComponent },
   {
     path: "pages",
     component: MainLayoutComponent,
@@ -27,21 +25,25 @@ const routes: Routes = [
         pathMatch: "full",
         redirectTo: "/pages/publish/welcome",
       },
-
+      { path: "login", component: LoginComponent },
+      { path: "signup", component: SignupComponent },
       {
         path: "publish",
-        canActivate: [AuthGuard],
         loadChildren: () =>
           import("./modules/publish/publish.module").then(
-            (m) => m.PublishModule,
+            (m) => m.PublishModule
           ),
       },
       {
-        path: "**",
-        component: NotfoundComponent,
+        path: "engage",
+        canActivate: [AuthGuard], // Protect publish route
+        loadChildren: () =>
+          import("./modules/engage/engage.module").then((m) => m.EngageModule),
       },
+      { path: "", redirectTo: "login", pathMatch: "full" },
     ],
   },
+  { path: "**", component: NotfoundComponent },
 ];
 
 @NgModule({

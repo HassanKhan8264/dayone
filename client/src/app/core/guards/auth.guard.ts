@@ -14,14 +14,11 @@ import { AuthService } from "src/app/shared/services/auth.service";
   providedIn: "root",
 })
 export class AuthGuard implements CanActivate {
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot,
+    state: RouterStateSnapshot
   ):
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>
@@ -32,15 +29,19 @@ export class AuthGuard implements CanActivate {
         if (response.authenticated) {
           return true;
         } else {
-          this.router.navigate(["/login"]);
+          // this.router.navigate(["/login"]);
+          // alert this feature required login
+          console.log("//alert this feature required login");
+
           return false;
         }
       }),
       catchError((error) => {
         console.error("Error checking authentication status:", error);
-        this.router.navigate(["/login"]);
+        // this.router.navigate(["/pages/publish"]);
+        console.log("//alert this feature required login");
         return of(false);
-      }),
+      })
     );
   }
 }
