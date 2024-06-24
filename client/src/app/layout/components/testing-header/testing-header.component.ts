@@ -8,10 +8,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./testing-header.component.scss"],
 })
 export class TestingHeaderComponent implements OnInit {
-  constructor(
-    private endpoint: EndpointService,
-    private router: Router,
-  ) {}
+  constructor(private endpoint: EndpointService, private router: Router) {}
 
   ngOnInit(): void {}
   logout() {
@@ -20,7 +17,7 @@ export class TestingHeaderComponent implements OnInit {
       .logout()
       .subscribe({
         next: () => {
-          this.router.navigate(["/login"]);
+          this.router.navigate(["splash"]);
         },
         error: (err) => {
           console.log(err);

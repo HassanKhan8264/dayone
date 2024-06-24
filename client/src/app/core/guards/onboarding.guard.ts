@@ -15,12 +15,12 @@ import { OnboardingService } from "src/app/shared/services/onboarding.service";
 export class OnboardingGuard implements CanActivate {
   constructor(
     private _onBoardingService: OnboardingService,
-    private router: Router,
+    private router: Router
   ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot,
+    state: RouterStateSnapshot
   ):
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>
