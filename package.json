@@ -6,9 +6,11 @@
   "author": "HassanKhan8264 <HF610061@GMAIL.COM>",
   "license": "MIT",
   "scripts": {
-    "watch-node": "nodemon dist/index.js",
-    "watch-ts": "tsc --watch && --ignore ./client",
-    "format": "prettier --write  '**/*.{ts,js,html,scss,css}'",
+    "build": "tsc",
+    "dev": "nodemon dist/index.js",
+    "dev-ts": "tsc --watch && --ignore ./client",
+    "start": "npm run build && npm run dev",
+    "owner": "prettier --write '**/*.{ts,js,html,scss,css}'",
     "p-format": "pretty-quick --pattern '**/*.{ts,js,html,scss,css}' --staged"
   },
   "dependencies": {
