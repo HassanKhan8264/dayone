@@ -1,12 +1,4 @@
-<p>publish-layout works!</p>
-<button mat-button (click)="addccount()">add account</button>
-<button mat-button (click)="onClick()">add item in local storage</button>
-<button mat-button [routerLink]="['/pages/publish/content']">
-  publish content
-</button>
-<button mat-button [routerLink]="['/pages/publish/welcome']">
-  add account or welcome
-</button>
+<v1-publish-side-menu></v1-publish-side-menu>
 <div class="app-content-body flex-grow-1">
   <router-outlet></router-outlet>
 </div>
