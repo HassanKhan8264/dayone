@@ -6,11 +6,9 @@
   "author": "HassanKhan8264 <HF610061@GMAIL.COM>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
     "dev": "nodemon dist/index.js",
     "dev:client": "cd client && ng serve",
     "dev-ts": "tsc --watch",
-    "start": "npm run build && concurrently \"npm run dev-ts\" \"npm run dev:client\" \"npm run dev\"",
     "format": "prettier --write '**/*.{ts,js,html,scss,css}'",
     "p-format": "pretty-quick --pattern '**/*.{ts,js,html,scss,css}' --staged"
   },
