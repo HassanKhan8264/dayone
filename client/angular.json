@@ -13,7 +13,7 @@
           "style": "scss",
           "skipTests": true,
           "skipImport": true,
-          "prefix": "v1"
+          "prefix": "be"
         },
         "@schematics/angular:service": {
           "skipTests": true

@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
 
 @Component({
-  selector: "v1-content",
+  selector: "be-content",
   templateUrl: "./content.component.html",
   styleUrls: ["./content.component.scss"],
 })
@@ -11,10 +11,7 @@ export class ContentComponent {
   addDataForm: FormGroup;
   data: any[] = [];
 
-  constructor(
-    private fb: FormBuilder,
-    private endpoint: EndpointService,
-  ) {}
+  constructor(private fb: FormBuilder, private endpoint: EndpointService) {}
 
   ngOnInit() {
     this.addDataForm = new FormGroup({
@@ -40,7 +37,7 @@ export class ContentComponent {
       },
       (error) => {
         console.error("Error submitting data", error);
-      },
+      }
     );
   }
 }

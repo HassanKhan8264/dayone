@@ -2,16 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { ProfileService } from "../../../core/http/profile.service";
 import { Router } from "@angular/router";
 @Component({
-  selector: "v1-splash",
+  selector: "be-splash",
   templateUrl: "./splash.component.html",
   styleUrls: ["./splash.component.scss"],
 })
 export class SplashComponent implements OnInit {
   showLogo = false;
-  constructor(
-    private profile: ProfileService,
-    private router: Router,
-  ) {}
+  constructor(private profile: ProfileService, private router: Router) {}
   // ngOnInit() {
   //   this.initialize();
   // }

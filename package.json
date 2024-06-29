@@ -1,16 +1,14 @@
 {
-  "name": "v-one",
+  "name": "bedoer",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "repository": "https://github.com/HassanKhan8264/v-one.git",
   "author": "HassanKhan8264 <HF610061@GMAIL.COM>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
     "dev": "nodemon dist/index.js",
-    "dev-ts": "tsc --watch && --ignore ./client",
-    "start": "npm run build && npm run dev",
-    "owner": "prettier --write '**/*.{ts,js,html,scss,css}'",
+    "dev:client": "cd client && ng serve",
+    "dev-ts": "tsc --watch",
+    "format": "prettier --write '**/*.{ts,js,html,scss,css}'",
     "p-format": "pretty-quick --pattern '**/*.{ts,js,html,scss,css}' --staged"
   },
   "dependencies": {
@@ -36,6 +34,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.6",
+    "concurrently": "^8.2.2",
     "prettier": "^3.3.1"
   }
 }
