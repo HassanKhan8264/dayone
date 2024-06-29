@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 
 @Component({
-  selector: "v1-main-layout",
+  selector: "be-main-layout",
   templateUrl: "./main-layout.component.html",
   styleUrls: ["./main-layout.component.scss"],
 })

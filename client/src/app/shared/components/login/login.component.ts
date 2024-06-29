@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 import { EndpointService } from "../../../core/http/endpoint.service";
 
 @Component({
-  selector: "v1-login",
+  selector: "be-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"],
 })
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private endpoint: EndpointService,
+    private endpoint: EndpointService
   ) {}
 
   ngOnInit(): void {
