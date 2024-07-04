@@ -54,11 +54,6 @@ const routes: Routes = [
         loadChildren: () =>
           import("./modules/engage/engage.module").then((m) => m.EngageModule),
       },
-      {
-        path: "",
-        redirectTo: "/pages/publish",
-        pathMatch: "full",
-      },
     ],
   },
   {

@@ -11,7 +11,10 @@ export class ContentComponent {
   addDataForm: FormGroup;
   data: any[] = [];
 
-  constructor(private fb: FormBuilder, private endpoint: EndpointService) {}
+  constructor(
+    private fb: FormBuilder,
+    private endpoint: EndpointService,
+  ) {}
 
   ngOnInit() {
     this.addDataForm = new FormGroup({
@@ -37,7 +40,7 @@ export class ContentComponent {
       },
       (error) => {
         console.error("Error submitting data", error);
-      }
+      },
     );
   }
 }
