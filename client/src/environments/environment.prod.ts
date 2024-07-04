@@ -1,6 +1,6 @@
 // src/environments/environment.prod.ts
 export const environment = {
-  appName: "bedoer",
+  appName: "Portalize",
   production: true,
   server: {
     self: {
