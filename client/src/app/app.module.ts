@@ -23,6 +23,7 @@ import { CoreModule } from "./core/core.module";
     AppRoutingModule,
     BrowserAnimationsModule,
 
+    // App
     CoreModule,
     SharedModule.forRoot(),
     LayoutModule,
