@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 import { EndpointService } from "../../../core/http/endpoint.service";
 
 @Component({
-  selector: "be-signup",
+  selector: "pt-signup",
   templateUrl: "./signup.component.html",
   styleUrls: ["./signup.component.scss"],
 })

@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { EndpointService } from "src/app/core/http/endpoint.service";
 
 @Component({
-  selector: "be-publish-side-menu",
+  selector: "pt-publish-side-menu",
   templateUrl: "./publish-side-menu.component.html",
   styleUrls: ["./publish-side-menu.component.scss"],
 })

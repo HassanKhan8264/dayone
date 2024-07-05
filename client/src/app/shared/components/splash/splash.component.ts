@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ProfileService } from "../../../core/http/profile.service";
 import { Router } from "@angular/router";
 @Component({
-  selector: "be-splash",
+  selector: "pt-splash",
   templateUrl: "./splash.component.html",
   styleUrls: ["./splash.component.scss"],
 })

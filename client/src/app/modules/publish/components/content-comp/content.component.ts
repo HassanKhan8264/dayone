@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
 
 @Component({
-  selector: "be-content",
+  selector: "pt-content",
   templateUrl: "./content.component.html",
   styleUrls: ["./content.component.scss"],
 })

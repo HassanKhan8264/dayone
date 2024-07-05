@@ -3,7 +3,7 @@ import { EndpointService } from "../../../core/http/endpoint.service";
 import { Router } from "@angular/router";
 
 @Component({
-  selector: "be-header",
+  selector: "pt-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
 })
