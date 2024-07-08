@@ -1,0 +1,34 @@
+<svg
+  version="1.1"
+  id="Layer_1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 64 64"
+  enable-background="new 0 0 64 64"
+  xml:space="preserve"
+  width="130px"
+  height="120px">
+  <!-- Calendar Background -->
+  <rect x="5" y="10" fill="#3F51B5" width="54" height="44" rx="5" />
+  <!-- Calendar Header -->
+  <rect x="5" y="10" fill="#303F9F" width="54" height="10" rx="5" />
+  <!-- Calendar Circles -->
+  <circle fill="#C5CAE9" cx="15" cy="15" r="2" />
+  <circle fill="#C5CAE9" cx="25" cy="15" r="2" />
+  <circle fill="#C5CAE9" cx="35" cy="15" r="2" />
+  <circle fill="#C5CAE9" cx="45" cy="15" r="2" />
+  <!-- Checkmark -->
+  <polyline
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    points="20,35 30,45 45,25">
+    <animate
+      attributeName="points"
+      values="20,35 30,45 45,25; 20,35 30,45 40,30; 20,35 30,45 45,25"
+      dur="2s"
+      repeatCount="indefinite" />
+  </polyline>
+</svg>
