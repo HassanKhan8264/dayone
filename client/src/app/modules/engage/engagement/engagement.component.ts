@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "pt-engagement",
+  selector: "dy-engagement",
   templateUrl: "./engagement.component.html",
   styleUrls: ["./engagement.component.scss"],
 })

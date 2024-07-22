@@ -76,7 +76,7 @@ export class authController extends BaseController {
           email: user.email,
           exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24, // Token expires after 24 hours
         },
-        config.Jwt_Secret
+        config.Jwt_Secret,
       );
 
       // Set cookie with the token

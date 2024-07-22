@@ -1,0 +1,16 @@
+.inner {
+  border: 1px solid red;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .inner-content {
+    border: 1px solid red;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+}

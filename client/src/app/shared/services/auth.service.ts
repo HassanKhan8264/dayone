@@ -10,7 +10,7 @@ export class AuthService {
     return this.profile.loggedIn().pipe(
       map((authenticated) => {
         return authenticated;
-      })
+      }),
     );
   }
 }

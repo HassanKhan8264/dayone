@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "pt-add-task",
+  selector: "dy-add-task",
   templateUrl: "./add-task.component.html",
   styleUrls: ["./add-task.component.scss"],
 })

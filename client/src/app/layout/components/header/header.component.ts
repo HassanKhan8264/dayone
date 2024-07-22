@@ -3,15 +3,12 @@ import { EndpointService } from "../../../core/http/endpoint.service";
 import { Router } from "@angular/router";
 
 @Component({
-  selector: "pt-header",
+  selector: "dy-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
-  constructor(
-    private endpoint: EndpointService,
-    private router: Router,
-  ) {}
+  constructor(private endpoint: EndpointService, private router: Router) {}
 
   ngOnInit(): void {}
   logout() {

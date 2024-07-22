@@ -1,45 +1,82 @@
-<img src="../../../../assets/logo/logo.svg" alt="" />
-<p>Dayone</p>
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <div>
-    <mat-form-field appearance="outline">
-      <mat-label>Email:</mat-label>
-      <input matInput type="email" formControlName="email" id="email" />
-      <mat-error
-        *ngIf="loginForm.controls?.['email'].errors?.['required'] && (loginForm.controls?.['email'].dirty || loginForm.controls?.['email'].touched)"
-      >
-        Email is required.
-      </mat-error>
-      <mat-error
-        *ngIf="loginForm.controls?.['email'].errors?.['invalidEmail'] && (loginForm.controls?.['email'].dirty || loginForm.controls?.['email'].touched)"
-      >
-        Invalid email format.
-      </mat-error>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="outline">
-      <mat-label>Password:</mat-label>
-      <input
-        matInput
-        type="password"
-        formControlName="password"
-        id="password"
-      />
-      <mat-error
-        *ngIf="loginForm.controls?.['password'].errors?.['required'] && (loginForm.controls?.['password'].dirty || loginForm.controls?.['password'].touched)"
-      >
-        Password is required.
-      </mat-error>
-      <mat-error
-        *ngIf="loginForm.controls?.['password'].errors?.['weakPassword'] && (loginForm.controls?.['password'].dirty || loginForm.controls?.['password'].touched)"
-      >
-        Weak password. Must contain at least one lowercase letter, one uppercase
-        letter, one digit, and be at least 8 characters long.
-      </mat-error>
-    </mat-form-field>
-  </div>
-  <button type="submit">Login</button>
-</form>
+<div class="flex items-center justify-center">
+  <div class="w-[30%] h-[100vh] flex items-center justify-center flex-col">
+    <div class="inner">
+      <div class="inner-content">
+        <div class="flex items-center w-[364px] h-[51px]">
+          <img src="../../../../assets/logo/logo.svg" alt="" class="h-[51px]" />
+          <span class="font-regular text-5xl">DAY</span>
+          <span class="font-thin text-5xl">ONE</span>
+        </div>
+        <h1 class="text-3xl font-bold text-secondary-500 mt-3">Log In</h1>
 
-<button routerLink="/pages/signup">signup</button>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div>
+            <mat-form-field class="custom-form-field" appearance="outline">
+              <mat-label class="custom-label">Email:</mat-label>
+              <input
+                matInput
+                type="email"
+                formControlName="email"
+                id="email"
+                class="custom-input" />
+              <mat-error
+                *ngIf="
+                  loginForm.controls?.['email'].errors?.['required'] &&
+                  (loginForm.controls?.['email'].dirty ||
+                    loginForm.controls?.['email'].touched)
+                ">
+                Email is required.
+              </mat-error>
+              <mat-error
+                *ngIf="
+                  loginForm.controls?.['email'].errors?.['email'] &&
+                  (loginForm.controls?.['email'].dirty ||
+                    loginForm.controls?.['email'].touched)
+                ">
+                Please enter a valid email.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Password:</mat-label>
+              <input
+                matInput
+                type="password"
+                formControlName="password"
+                id="password" />
+              <mat-error
+                *ngIf="
+                  loginForm.controls?.['password'].errors?.['required'] &&
+                  (loginForm.controls?.['password'].dirty ||
+                    loginForm.controls?.['password'].touched)
+                ">
+                Password is required.
+              </mat-error>
+              <mat-error
+                *ngIf="
+                  loginForm.controls?.['password'].errors?.['minlength'] &&
+                  (loginForm.controls?.['password'].dirty ||
+                    loginForm.controls?.['password'].touched)
+                ">
+                Password must be at least 8 characters long.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <button routerLink="/pages/signup">signup</button>
+      </div>
+    </div>
+    <span class="text-black-100 text-xl"
+      >Terms and Condition - Privacy Policy</span
+    >
+  </div>
+  <div class="w-[70%] h-[100%]">
+    <img
+      class="w-[100%] h-[100vh]"
+      src="../../../../assets/images/welcomBanner.jpg"
+      alt="" />
+  </div>
+</div>
