@@ -1,0 +1,80 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --primary-color: #f69320;
+    --primary-color-50: #fef4e9;
+    --primary-color-100: #fef2d6;
+    --primary-color-200: #fbcd98;
+    --primary-color-300: #f9b76a;
+    --primary-color-400: #f8a94d;
+    --primary-color-500: #f69320;
+    --primary-color-600: #e0861d;
+    --primary-color-700: #af6817;
+    --primary-color-800: #875112;
+    --primary-color-900: #673e0d;
+
+    --secondary-color: #2f3c6c;
+    --secondary-color-50: #eaecf0;
+    --secondary-color-100: #bfc3d1;
+    --secondary-color-200: #9fa5bb;
+    --secondary-color-300: #747c9d;
+    --secondary-color-400: #596389;
+    --secondary-color-500: #2f3c6c;
+    --secondary-color-600: #2b3762;
+    --secondary-color-700: #212b4d;
+    --secondary-color-800: #1a213b;
+    --secondary-color-900: #14192d;
+
+    --black-color: #464646;
+    --black-color-50: #ededed;
+    --black-color-100: #c6c6c6;
+    --black-color-200: #aaaaaa;
+    --black-color-300: #838383;
+    --black-color-400: #6b6b6b;
+    --black-color-500: #464646;
+    --black-color-600: #404040;
+    --black-color-700: #323232;
+    --black-color-800: #272727;
+    --black-color-900: #1d1d1d;
+
+    --white-color: #ffffff;
+    --white-color-50: #ffffff;
+    --white-color-100: #f9fafb;
+    --white-color-200: #edf0f1;
+    --white-color-300: #eaeaea;
+    --white-color-400: #e6e6e6;
+    --white-color-500: #e0e0e0;
+    --white-color-600: #cccccc;
+    --white-color-700: #9f9f9f;
+    --white-color-800: #7b7b7b;
+    --white-color-900: #5e5e5e;
+
+    --accent-color: #f69320;
+    --accent-color-50: #fef4e9;
+    --accent-color-100: #fcdeba;
+    --accent-color-200: #fbcd98;
+    --accent-color-300: #f9b76a;
+    --accent-color-400: #f8a94d;
+    --accent-color-500: #f69320;
+    --accent-color-600: #e0861d;
+    --accent-color-700: #af6817;
+    --accent-color-800: #875112;
+    --accent-color-900: #673e0d;
+  }
+}
+
+/* styles.css or a component-specific CSS file */
+.custom-form-field {
+  @apply w-full h-[59px] rounded-[4px] border border-[#ese7eb];
+}
+
+.custom-label {
+  @apply text-[20px] text-black-100;
+}
+
+.custom-input {
+  @apply h-[59px] w-full outline-none;
+}

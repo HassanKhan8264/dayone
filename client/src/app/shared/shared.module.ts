@@ -28,13 +28,13 @@ const components = [
 ];
 
 // const services = [];
+// const services = [];
 
 @NgModule({
   declarations: [...components],
   imports: [
     CommonModule,
     MaterialModule,
-
     RouterModule,
     FormsModule,
     ReactiveFormsModule,

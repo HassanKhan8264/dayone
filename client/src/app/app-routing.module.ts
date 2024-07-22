@@ -11,7 +11,7 @@ import { NotfoundComponent } from "./shared/components/notfound/notfound.compone
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "splash",
+    redirectTo: "/pages/login",
     pathMatch: "full",
   },
   {

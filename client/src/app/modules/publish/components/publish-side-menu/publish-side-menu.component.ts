@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { EndpointService } from "src/app/core/http/endpoint.service";
 
 @Component({
-  selector: "be-publish-side-menu",
+  selector: "dy-publish-side-menu",
   templateUrl: "./publish-side-menu.component.html",
   styleUrls: ["./publish-side-menu.component.scss"],
 })
@@ -13,13 +13,5 @@ export class PublishSideMenuComponent implements OnInit {
   addccount() {
     let account = "facebook account";
     let item = localStorage.setItem("account", account);
-  }
-  onClick() {
-    this.endpoint
-      .user()
-      .getAll()
-      .subscribe((data) => {
-        console.log(data);
-      });
   }
 }

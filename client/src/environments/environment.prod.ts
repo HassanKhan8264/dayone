@@ -1,6 +1,6 @@
 // src/environments/environment.prod.ts
 export const environment = {
-  appName: "Portalize",
+  appName: "Dayone",
   production: true,
   server: {
     self: {

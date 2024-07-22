@@ -1,42 +1,48 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { HttpClient } from "@angular/common/http";
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from "@angular/forms";
 import { Router } from "@angular/router";
 import { EndpointService } from "../../../core/http/endpoint.service";
 
 @Component({
-  selector: "be-login",
+  selector: "dy-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-
   constructor(
-    private formBuilder: FormBuilder,
-    private http: HttpClient,
     private router: Router,
     private endpoint: EndpointService,
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: ["", [Validators.required, Validators.email]],
-      password: ["", Validators.required],
+      password: ["", [Validators.required, Validators.minLength(8)]],
     });
   }
-
   onSubmit() {
+    let payload = {
+      email: this.loginForm.get("email").value,
+      password: this.loginForm.get("password").value,
+    };
     this.endpoint
       .user()
-      .login(this.loginForm.value)
+      .login(payload)
       .subscribe({
         next: (res: any) => {
-          console.log("Login successful", res);
-          this.router.navigate(["/pages"]);
+          if (res) {
+            console.log("Login successful", res);
+            this.router.navigate(["/pages"]);
+          }
         },
         error: (error) => {
-          alert("User does not exist.");
           console.log("err", error);
         },
       });

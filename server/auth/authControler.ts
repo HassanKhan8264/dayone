@@ -8,7 +8,7 @@ import { resolve } from "path";
 import config from "../config";
 
 export class authController extends BaseController {
-  signUp = async (req: Request, res: Response) => {
+  register = async (req: Request, res: Response) => {
     try {
       let { name, email, password, phone } = req.body;
       const { error } = userSchema.validate(req.body);
@@ -88,13 +88,7 @@ export class authController extends BaseController {
       });
 
       // Send successful login response
-      return super.response(res, 200, true, "Login successful", {
-        user: {
-          name: user.name,
-          phone: user.phone,
-          email: user.email,
-        },
-      });
+      return super.response(res, 200, true, "Login successful");
     } catch (error) {
       console.error(error);
       return super.response(res, 500, false, "Internal Server Error");

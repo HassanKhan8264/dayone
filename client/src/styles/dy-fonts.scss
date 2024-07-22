@@ -1,0 +1,98 @@
+// Font family variables
+$font-thin: "Proxima Nova THIN";
+$font-light: "Proxima Nova LIGHT";
+$font-regular: "Proxima Nova REGULAR";
+$font-semibold: "Proxima Nova SEMIBOLD";
+$font-bold: "Proxima Nova BOLD";
+$font-extrabold: "Proxima Nova EXTRABOLD";
+
+// Font size variables
+$font-size-dxl: 40px;
+$font-size-xxxl: 35px;
+$font-size-4xl: 26px;
+$font-size-xxl: 24px;
+$font-size-2xl: 22px;
+$font-size-xl: 20px;
+$font-size-lg: 18px;
+$font-size-base: 16px;
+$font-size-md: 14px;
+$font-size-sm: 12px;
+$font-size-xs: $font-size-base * 0.625;
+
+// Font size classes
+.font-size {
+  font-size: $font-size-base !important;
+
+  &-dxl {
+    font-size: $font-size-dxl !important;
+  }
+
+  &-xxxl {
+    font-size: $font-size-xxxl !important;
+  }
+
+  &-4xl {
+    font-size: $font-size-4xl !important;
+  }
+
+  &-xxl {
+    font-size: $font-size-xxl !important;
+  }
+
+  &-2xl {
+    font-size: $font-size-2xl !important;
+  }
+
+  &-xl {
+    font-size: $font-size-xl !important;
+  }
+
+  &-lg {
+    font-size: $font-size-lg !important;
+  }
+
+  &-base {
+    font-size: $font-size-base !important;
+  }
+
+  &-md {
+    font-size: $font-size-md !important;
+  }
+
+  &-sm {
+    font-size: $font-size-sm !important;
+  }
+
+  &-xs {
+    font-size: $font-size-xs !important;
+  }
+}
+
+// Font family classes
+.font {
+  font-family: $font-regular !important;
+
+  &-thin {
+    font-family: $font-thin !important;
+  }
+
+  &-light {
+    font-family: $font-light !important;
+  }
+
+  &-regular {
+    font-family: $font-regular !important;
+  }
+
+  &-semibold {
+    font-family: $font-semibold !important;
+  }
+
+  &-bold {
+    font-family: $font-bold !important;
+  }
+
+  &-extrabold {
+    font-family: $font-extrabold !important;
+  }
+}

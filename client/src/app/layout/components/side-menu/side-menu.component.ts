@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "be-side-menu",
+  selector: "dy-side-menu",
   templateUrl: "./side-menu.component.html",
   styleUrls: ["./side-menu.component.scss"],
 })
