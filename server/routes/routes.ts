@@ -6,7 +6,7 @@ const router = express.Router();
 const authControler = new authController();
 
 // authentication
-router.post("/auth/register", authControler.signUp);
+router.post("/auth/register", authControler.register);
 router.post("/auth/login", authControler.login);
 router.post("/auth/logout", authControler.logout);
 
@@ -16,7 +16,7 @@ router.get(
   authenticateToken,
   (req: Request, res: Response) => {
     res.json({ authenticated: true, user: req.user });
-  },
+  }
 );
 
 export default router;

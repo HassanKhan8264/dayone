@@ -35,7 +35,6 @@ const components = [
   imports: [
     CommonModule,
     MaterialModule,
-
     RouterModule,
     FormsModule,
     ReactiveFormsModule,

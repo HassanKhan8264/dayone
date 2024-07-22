@@ -2,22 +2,42 @@
 <p>Dayone</p>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div>
-    <label for="email">Email:</label>
-    <input
-      id="email"
-      type="email"
-      formControlName="email"
-      autocomplete="email"
-    />
+    <mat-form-field appearance="outline">
+      <mat-label>Email:</mat-label>
+      <input matInput type="email" formControlName="email" id="email" />
+      <mat-error
+        *ngIf="loginForm.controls?.['email'].errors?.['required'] && (loginForm.controls?.['email'].dirty || loginForm.controls?.['email'].touched)"
+      >
+        Email is required.
+      </mat-error>
+      <mat-error
+        *ngIf="loginForm.controls?.['email'].errors?.['invalidEmail'] && (loginForm.controls?.['email'].dirty || loginForm.controls?.['email'].touched)"
+      >
+        Invalid email format.
+      </mat-error>
+    </mat-form-field>
   </div>
   <div>
-    <label for="password">Password:</label>
-    <input
-      id="password"
-      type="password"
-      formControlName="password"
-      autocomplete="current-password"
-    />
+    <mat-form-field appearance="outline">
+      <mat-label>Password:</mat-label>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        id="password"
+      />
+      <mat-error
+        *ngIf="loginForm.controls?.['password'].errors?.['required'] && (loginForm.controls?.['password'].dirty || loginForm.controls?.['password'].touched)"
+      >
+        Password is required.
+      </mat-error>
+      <mat-error
+        *ngIf="loginForm.controls?.['password'].errors?.['weakPassword'] && (loginForm.controls?.['password'].dirty || loginForm.controls?.['password'].touched)"
+      >
+        Weak password. Must contain at least one lowercase letter, one uppercase
+        letter, one digit, and be at least 8 characters long.
+      </mat-error>
+    </mat-form-field>
   </div>
   <button type="submit">Login</button>
 </form>

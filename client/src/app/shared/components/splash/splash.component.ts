@@ -7,17 +7,12 @@ import { Router } from "@angular/router";
   styleUrls: ["./splash.component.scss"],
 })
 export class SplashComponent implements OnInit {
-  showLogo = false;
-  constructor(
-    private profile: ProfileService,
-    private router: Router,
-  ) {}
+  constructor(private profile: ProfileService, private router: Router) {}
   ngOnInit() {
     this.initialize();
   }
   initialize() {
     setTimeout(() => {
-      this.showLogo = true;
       this.profile.loggedIn().subscribe({
         next: (response: any) => {
           console.log(response);
