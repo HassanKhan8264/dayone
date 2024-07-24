@@ -8,7 +8,10 @@ import { Router } from "@angular/router";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private endpoint: EndpointService, private router: Router) {}
+  constructor(
+    private endpoint: EndpointService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {}
   logout() {

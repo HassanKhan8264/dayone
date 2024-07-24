@@ -31,6 +31,7 @@ module.exports = {
           700: "var(--secondary-color-700)",
           800: "var(--secondary-color-800)",
           900: "var(--secondary-color-900)",
+          1000: "var(--secondary-color-1000)",
         },
         black: {
           50: "var(--black-color-50)",

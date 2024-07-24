@@ -15,10 +15,11 @@ import { EndpointService } from "../../../core/http/endpoint.service";
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  hide = true;
   constructor(
     private router: Router,
     private endpoint: EndpointService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) {}
 
   ngOnInit(): void {
@@ -26,6 +27,9 @@ export class LoginComponent implements OnInit {
       email: ["", [Validators.required, Validators.email]],
       password: ["", [Validators.required, Validators.minLength(8)]],
     });
+  }
+  togglePasswordVisibility(): void {
+    this.hide = !this.hide;
   }
   onSubmit() {
     let payload = {
