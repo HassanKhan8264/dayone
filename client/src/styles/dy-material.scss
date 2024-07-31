@@ -1,16 +1,17 @@
 .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: #e5e7eb;
-  /* Unfocused outline color */
+    color: #E5E7EB;
+    /* Unfocused outline color */
 }
 
 /* Hover state */
 .mat-form-field-appearance-outline:hover .mat-form-field-outline {
-  color: #6b82ff;
-  /* Hover outline color */
+    color: #6B82FF;
+
+    /* Hover outline color */
 }
 
 /* Focused state */
 .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
-  color: #3f51b5;
-  /* Focused outline color */
+    color: #3F51B5;
+    /* Focused outline color */
 }
