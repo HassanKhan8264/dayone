@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import {
   FormBuilder,
   FormControl,
@@ -12,6 +12,7 @@ import { EndpointService } from "../../../core/http/endpoint.service";
   selector: "dy-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"],
+  encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
@@ -50,5 +51,8 @@ export class LoginComponent implements OnInit {
           console.log("err", error);
         },
       });
+  }
+  gotoRegister() {
+    this.router.navigate(["/pages/register"]);
   }
 }

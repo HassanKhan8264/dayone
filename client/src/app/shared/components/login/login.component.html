@@ -20,27 +20,24 @@
                 formControlName="email"
                 class="font-regular text-sm font-size-base text-secondary-1000"
                 placeholder="Enter Your Email Address"
-                id="email"
-              />
-              <mat-error
-                *ngIf="
-                  loginForm.controls?.['email'].errors?.['required'] &&
-                  (loginForm.controls?.['email'].dirty ||
-                    loginForm.controls?.['email'].touched)
-                "
-              >
-                Email is required.
-              </mat-error>
-              <mat-error
-                *ngIf="
-                  loginForm.controls?.['email'].errors?.['email'] &&
-                  (loginForm.controls?.['email'].dirty ||
-                    loginForm.controls?.['email'].touched)
-                "
-              >
-                Please enter a valid email.
-              </mat-error>
+                id="email" />
             </mat-form-field>
+            <mat-error
+              *ngIf="
+                loginForm.controls?.['email'].errors?.['required'] &&
+                (loginForm.controls?.['email'].dirty ||
+                  loginForm.controls?.['email'].touched)
+              ">
+              Email is required.
+            </mat-error>
+            <mat-error
+              *ngIf="
+                loginForm.controls?.['email'].errors?.['email'] &&
+                (loginForm.controls?.['email'].dirty ||
+                  loginForm.controls?.['email'].touched)
+              ">
+              Please enter a valid email.
+            </mat-error>
 
             <mat-label class="text-secondary-1000 font-regular"
               >Password</mat-label
@@ -51,24 +48,21 @@
                 [type]="hide ? 'password' : 'text'"
                 formControlName="password"
                 class="font-regular text-sm font-size-base text-secondary-1000"
-                id="password"
-              />
+                id="password" />
               <button
                 mat-icon-button
                 matSuffix
-                (click)="togglePasswordVisibility()"
-              >
-                <mat-icon
-                  >{{ hide ? "visibility_off" : "visibility" }}</mat-icon
-                >
+                (click)="togglePasswordVisibility()">
+                <mat-icon>{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
               </button>
               <mat-error
                 *ngIf="
                   loginForm.controls?.['password'].errors?.['required'] &&
                   (loginForm.controls?.['password'].dirty ||
                     loginForm.controls?.['password'].touched)
-                "
-              >
+                ">
                 Password is required.
               </mat-error>
               <mat-error
@@ -76,21 +70,19 @@
                   loginForm.controls?.['password'].errors?.['minlength'] &&
                   (loginForm.controls?.['password'].dirty ||
                     loginForm.controls?.['password'].touched)
-                "
-              >
+                ">
                 Password must be at least 8 characters long.
               </mat-error>
             </mat-form-field>
           </form>
         </div>
-        <button
-          type="submit"
-          class="h-10 w-full bg-black-700 rounded text-white p-2"
-        >
+        <button tw-button type="submit">
           <span class="font-regular text-base text-white-50"> Sign In </span>
         </button>
         <div class="flex justify-between mt-3">
-          <p class="text-secondary-1000 text-base mb-2 font-regular">
+          <p
+            class="text-secondary-1000 text-base mb-2 font-regular"
+            (click)="gotoRegister()">
             Create an Account
           </p>
           <p class="text-secondary-1000 text-base mb-2 font-regular">
@@ -107,7 +99,6 @@
     <img
       class="w-[100%] h-[100vh]"
       src="assets/images/welcomBanner.jpg"
-      alt=""
-    />
+      alt="" />
   </div>
 </div>
