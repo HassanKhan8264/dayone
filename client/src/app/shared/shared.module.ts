@@ -13,6 +13,7 @@ import { MainLayoutComponent } from "../layout/main-layout/main-layout.component
 import { HeaderComponent } from "../layout/components/header/header.component";
 import { EngagementComponent } from "../modules/engage/engagement/engagement.component";
 import { ContentComponent } from "../modules/publish/components/content-comp/content.component";
+import { ScTailwindModule } from "./modules/dy-tailwind/dy-tailwind.module";
 
 const components = [
   SignupComponent,
@@ -38,6 +39,7 @@ const components = [
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    ScTailwindModule,
   ],
   providers: [],
   exports: [
@@ -46,6 +48,7 @@ const components = [
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    ScTailwindModule,
   ],
 })
 export class SharedModule {

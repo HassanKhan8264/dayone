@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    --secondary-color-1000: #515050;
+
     --primary-color: #f69320;
     --primary-color-50: #fef4e9;
     --primary-color-100: #fef2d6;
@@ -64,17 +66,4 @@
     --accent-color-800: #875112;
     --accent-color-900: #673e0d;
   }
-}
-
-/* styles.css or a component-specific CSS file */
-.custom-form-field {
-  @apply w-full h-[59px] rounded-[4px] border border-[#ese7eb];
-}
-
-.custom-label {
-  @apply text-[20px] text-black-100;
-}
-
-.custom-input {
-  @apply h-[59px] w-full outline-none;
 }

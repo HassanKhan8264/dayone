@@ -4,3 +4,14 @@
 @import "./dy-icons.scss";
 @import "./dy-fonts.scss";
 @import "./dy-color.scss";
+@import "./dy-buttons.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
